@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resource :redis, only: %i[show]
+  resource :redis, only: %i[new create show]
 end

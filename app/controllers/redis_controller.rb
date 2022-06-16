@@ -1,5 +1,12 @@
 class RedisController < ApplicationController
+  def new
+  end
+
+  def create
+    Redis.current.set('mykey', params[:text])
+  end
+
   def show
-    Redis.current.set('mykey', 'Hello')
+    @redis = (Redis.current.get('mykey'))
   end
 end
